@@ -15,4 +15,4 @@ ADD server.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/run-java.sh"]
 
 EXPOSE 8080
-CMD ["/usr/local/bin/server.sh", "start"]
+CMD ["server.sh", "start"]
