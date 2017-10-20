@@ -10,8 +10,9 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 WORKDIR $CATALINA_HOME
 
 ADD run-java.sh /usr/local/bin/
+ADD server.sh /usr/local/bin/
 
-ENTRYPOINT ["/usr/bin/run-java.sh"]
+ENTRYPOINT ["/usr/local/bin/run-java.sh"]
 
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+CMD ["/usr/local/bin/server.sh", "start"]
