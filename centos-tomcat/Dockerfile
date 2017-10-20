@@ -12,3 +12,6 @@ WORKDIR $CATALINA_HOME
 ADD run-java.sh /usr/local/bin/
 
 ENTRYPOINT ["/usr/bin/run-java.sh"]
+
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
