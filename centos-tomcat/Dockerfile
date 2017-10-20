@@ -9,10 +9,10 @@ ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 WORKDIR $CATALINA_HOME
 
-ADD run-java.sh /usr/local/bin/
+ADD container-limits /usr/local/bin/
 ADD server.sh /usr/local/bin/
 
-ENTRYPOINT ["/usr/local/bin/run-java.sh"]
+ENTRYPOINT ["/usr/local/bin/container-limits"]
 
 EXPOSE 8080
 CMD ["server.sh", "start"]
