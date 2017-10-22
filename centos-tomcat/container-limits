@@ -56,13 +56,15 @@ container_memory() {
 limit="$(core_limit)"
 if [ x$limit != x ]; then
    export CONTAINER_CORE_LIMIT="$limit"
+   echo $CONTAINER_CORE_LIMIT >> /tmp/foo.txt
 fi
 
 max_mem="$(container_memory)"
 if [ x$max_mem != x ]; then
   export CONTAINER_MAX_MEMORY="$max_mem"
+  echo $CONTAINER_MAX_MEMORY >> /tmp/foo.txt
 fi
 
-echo "Foo" > /tmp/foo.txt
+echo "Foo" >> /tmp/foo.txt
 
-exec "$@"
+/bin/bash -c "export Test=Test" && "$@"
