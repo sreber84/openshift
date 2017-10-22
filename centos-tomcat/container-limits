@@ -63,4 +63,6 @@ if [ x$max_mem != x ]; then
   export CONTAINER_MAX_MEMORY="$max_mem"
 fi
 
-exec env SREBER="Test" "$@"
+echo "Foo" > /tmp/foo.txt
+
+exec "$@"
