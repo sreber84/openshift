@@ -66,5 +66,6 @@ if [ x$max_mem != x ]; then
 fi
 
 echo "Foo" >> /tmp/foo.txt
+export TEST="Test"
 
-/bin/bash -c "export Test=Test" && "$@"
+exec "$@"

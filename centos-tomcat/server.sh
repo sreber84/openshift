@@ -3,6 +3,8 @@
 . /etc/tomcat/tomcat.conf
 . /usr/libexec/tomcat/preamble
 
+env
+
 MAIN_CLASS=org.apache.catalina.startup.Bootstrap
 
 FLAGS="$JAVA_OPTS"
