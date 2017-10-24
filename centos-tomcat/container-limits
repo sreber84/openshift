@@ -63,9 +63,7 @@ if [ x$max_mem != x ]; then
   export CONTAINER_MAX_MEMORY="$max_mem"
 fi
 
-export TEST="Test"
-
-echo "Limit: $limit" >> /tmp/foo.txt
-echo "Memory: $max_mem" >> /tmp/foo.txt
+echo "Core Limit: $limit" >> /tmp/container-limits.log
+echo "Memory Limit: $max_mem" >> /tmp/container-limits.log
 
 exec "$@"
