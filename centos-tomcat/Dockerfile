@@ -12,6 +12,9 @@ WORKDIR $CATALINA_HOME
 ADD container-limits /usr/local/bin/
 ADD server.sh /usr/local/bin/
 
+RUN mkdir -p /usr/local/fvp/fvpTmpDir
+RUN chmod 777 -R /usr/local/fvp/
+
 ENTRYPOINT ["/usr/local/bin/container-limits"]
 
 EXPOSE 8080
