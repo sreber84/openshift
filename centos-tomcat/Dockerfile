@@ -15,6 +15,12 @@ ADD server.sh /usr/local/bin/
 RUN mkdir -p /usr/local/fvp/fvpTmpDir
 RUN chmod 777 -R /usr/local/fvp/
 
+RUN mkdir -p /usr/local/a/aTmpDir
+RUN chmod 777 -R /usr/local/a/
+
+RUN mkdir -p /usr/local/b/bTmpDir
+RUN chmod 777 -R /usr/local/b/
+
 ENTRYPOINT ["/usr/local/bin/container-limits"]
 
 EXPOSE 8080
