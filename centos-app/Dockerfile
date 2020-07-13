@@ -1,8 +1,8 @@
-FROM 172.30.245.116:5000/sreber-build/centos-tomcat
+FROM ubi8/ubi:latest
 MAINTAINER Simon Reber <sreber@redhat.com>
 
 RUN yum -y --setopt=tsflags=nodocs update && \
-    yum -y --setopt=tsflags=nodocs install java-1.8.0-openjdk.x86_64 tomcat perl && \
+    yum -y --setopt=tsflags=nodocs module install postgresql:9.6 && \
     yum clean all
 
 ENV CATALINA_HOME /usr/local/tomcat
