@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi8:latest
 MAINTAINER Simon Reber <sreber@redhat.com>
 
 RUN yum -y --setopt=tsflags=nodocs update && \
-    yum -y --setopt=tsflags=nodocs module install postgresql:9.6 && \
+    yum -y --setopt=tsflags=nodocs module install postgresql:12 && \
     yum clean all
 
 ENV CATALINA_HOME /usr/local/tomcat
