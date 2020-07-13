@@ -1,4 +1,4 @@
-FROM ubi8/ubi:latest
+FROM registry.access.redhat.com/ubi8:latest
 MAINTAINER Simon Reber <sreber@redhat.com>
 
 RUN yum -y --setopt=tsflags=nodocs update && \
