@@ -1,7 +1,8 @@
 FROM registry.access.redhat.com/ubi7:latest
 MAINTAINER Simon Reber <sreber@redhat.com>
 
-RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null && \
+RUN yum-config-manager --enable rhel-7-server-rpms && \
+    yum repolist && \
     yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install tomcat && \
     yum clean all
