@@ -3,6 +3,8 @@ MAINTAINER Simon Reber <sreber@redhat.com>
 
 USER root
 COPY ./etc-pki-entitlement /etc/pki/entitlement
+COPY ./rhsm-conf /etc/rhsm
+COPY ./rhsm-ca /etc/rhsm/ca
 RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs --enablerepo=rhel-7-server-rpms install tomcat && \
     yum clean all
