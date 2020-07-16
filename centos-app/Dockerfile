@@ -1,7 +1,8 @@
 FROM registry.access.redhat.com/ubi7:latest
 MAINTAINER Simon Reber <sreber@redhat.com>
 
-COPY ./etc-pki-entitlement/ /etc/pki/entitlement/
+USER root
+COPY ./etc-pki-entitlement /etc/pki/entitlement
 RUN sleep 9999
 RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs --enablerepo=rhel-7-server-rpms install tomcat && \
