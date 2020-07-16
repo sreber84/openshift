@@ -13,4 +13,4 @@ ENV PATH $CATALINA_HOME/bin:$PATH
 WORKDIR $CATALINA_HOME
 
 EXPOSE 8080
-CMD ["server.sh", "start"]
+CMD ["/usr/libexec/tomcat/server", "start"]
